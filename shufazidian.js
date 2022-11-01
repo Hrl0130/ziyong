@@ -8,19 +8,19 @@
 群1077223830
 *******************************
 [rewrite_local]
-^http[s]?:\/\/wxapp-a.shufazidian.com\/storm.php\/info.+$ url script-response-body wxapp-a.js
+^http[s]?:\/\/wxapp-a.shufazidian.com\/storm.php\/info.+$ url script-response-body shufazidian.js
 [mitm] 
-hostname = *.wxapp-a.*
+hostname = *.shufazidian.*
 *******************************
 Surge
 
 [Script]
-^http[s]?:\/\/wxapp-a.shufazidian.com\/storm.php\/info.+$ requires-body=1,max-size=0,script-path=wxapp-a.js
+^http[s]?:\/\/wxapp-a.shufazidian.com\/storm.php\/info.+$ requires-body=1,max-size=0,script-path=shufazidian.js
 
 [MITM]
-hostname = *.wxapp-a.*
+hostname = *.shufazidian.*
 
 *******************************/
 var obj = JSON.parse($response.body);
-    obj.data.vip= 00";
+    obj.vip= 00";
     $done({body: JSON.stringify(obj)});
