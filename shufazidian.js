@@ -1,11 +1,26 @@
 /*******************************
-⚠️🛝此捷径仅适用于本地重写⚠️🛝
-  🧚🏻‍♂️作者：🍡魔法师🍡
-  🎈交流群：993539991
-🫧脚本名称:书写字典
-🫧建议配合working copy一起食用
-✈️下载地址https://apps.apple.com/app/id896694807✈️
+  公众号:木木IOS分享
+关注了解更多新科技！！！
+书写字典
+脚本名称:书写字典
+使用声明：️此脚本仅供学习与交流，
+        请勿转载与贩卖！️️️
+群1077223830
+*******************************
+[rewrite_local]
+^http[s]?:\/\/wxapp-a.shufazidian.com\/storm.php\/info.+$ url script-response-body shufazidian.js
+[mitm] 
+hostname = *.shufazidian.*
+*******************************
+Surge
+
+[Script]
+^http[s]?:\/\/wxapp-a.shufazidian.com\/storm.php\/info.+$ requires-body=1,max-size=0,script-path=shufazidian.js
+
+[MITM]
+hostname = *.shufazidian.*
+
 *******************************/
-var body=$response.body;
-body = body.replace(/vip\":".*?"/g,'vip":"2099-09-09 00:23:00"');
-$done(body);
+var obj = JSON.parse($response.body);
+    obj.data.vip= 00";
+    $done({body: JSON.stringify(obj)});
