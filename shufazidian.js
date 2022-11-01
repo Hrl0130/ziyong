@@ -8,7 +8,7 @@
 群1077223830
 *******************************
 [rewrite_local]
-^http[s]?:\/\/wxapp-a.shufazidian.com\/storm.php\/info.+$ url script-response-body shufazidian.js
+^http[s]?:\/\/wxapp-a.shufazidian.com\/storm.php\/info.+$ url script-response-body https://raw.githubusercontent.com/Hrl0130/ziyong/main/shufazidian.js
 [mitm] 
 hostname = *.shufazidian.*
 *******************************
