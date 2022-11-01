@@ -8,7 +8,7 @@
 群1077223830
 *******************************
 [rewrite_local]
-^http[s]?:\/\/wxapp-a.shufazidian.com\/storm.php\/info.+$ url script-response-body https://raw.githubusercontent.com/Hrl0130/ziyong/main/shufazidian.js
+^http[s]?:\/\/wxapp-a.shufazidian.com\/storm.php\/info.+$ url script-response-body shufazidian.js
 [mitm] 
 hostname = *.shufazidian.*
 *******************************
@@ -22,5 +22,5 @@ hostname = *.shufazidian.*
 
 *******************************/
 var obj = JSON.parse($response.body);
-    obj.vip= 00";
+    obj.data.vip= 00";
     $done({body: JSON.stringify(obj)});
